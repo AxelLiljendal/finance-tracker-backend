@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.github.axelliljendal</groupId>
-	<artifactId>finance-tracker</artifactId>
+	<artifactId>finance-tracker-backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Personal finance tracker application</name>
-	<description>A full-stack personal finance tracking application for managing expenses,  income, budgets, and financial goals. Features include transaction categorization,  spending analytics, report generation, and budget planning.</description>
+	<name>finance-tracker-backend</name>
+	<description>Backend API for a full-stack personal finance tracking application for managing expenses, income, budgets, and financial goals. Features include transaction categorization, spending analytics, report generation, and budget planning.</description>
 	<url/>
 	<licenses>
 		<license/>

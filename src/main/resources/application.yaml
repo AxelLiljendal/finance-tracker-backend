@@ -1,6 +1,6 @@
 spring:
   application:
-    name: Personal finance tracker application
+    name: finance-tracker-backend
   data:
     mongodb:
       uri: mongodb://localhost:27017/finance-tracker
