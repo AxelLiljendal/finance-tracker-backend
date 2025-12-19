@@ -1,11 +1,12 @@
 package com.github.axelliljendal.finance_tracker;
 
+import com.github.axelliljendal.finance_tracker.config.JwtConfig;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
-import org.springframework.beans.factory.annotation.Value;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -16,13 +17,10 @@ import java.util.Map;
 import java.util.function.Function;
 
 @Service
+@RequiredArgsConstructor
 public class JwtService {
 
-    @Value("${jwt.secret}")
-    private String secret;
-
-    @Value("${jwt.expiration:86400000}") // Default to 24 hours in milliseconds
-    private long expiration;
+    private final JwtConfig jwtConfig;
 
     // Extract username from token
     public String extractUsername(String token) {
@@ -68,7 +66,12 @@ public class JwtService {
 
     // Generate token with extra claims
     public String generateToken(Map<String, Object> extraClaims, UserDetails userDetails) {
-        return buildToken(extraClaims, userDetails, expiration);
+        return buildToken(extraClaims, userDetails, jwtConfig.getExpiration());
+    }
+
+    // Generate refresh token
+    public String generateRefreshToken(UserDetails userDetails) {
+        return buildToken(new HashMap<>(), userDetails, jwtConfig.getRefreshExpiration());
     }
 
     // Build the actual token
@@ -89,7 +92,17 @@ public class JwtService {
 
     // Get the signing key from the secret
     private Key getSigningKey() {
-        byte[] keyBytes = Decoders.BASE64.decode(secret);
+        byte[] keyBytes = Decoders.BASE64.decode(jwtConfig.getSecret());
         return Keys.hmacShaKeyFor(keyBytes);
+    }
+
+    // Helper method to get token header name
+    public String getHeader() {
+        return jwtConfig.getHeader();
+    }
+
+    // Helper method to get token prefix
+    public String getPrefix() {
+        return jwtConfig.getPrefix();
     }
 }
