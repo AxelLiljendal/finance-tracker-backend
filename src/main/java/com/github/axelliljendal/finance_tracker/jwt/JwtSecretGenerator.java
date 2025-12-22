@@ -1,4 +1,4 @@
-package com.github.axelliljendal.finance_tracker;
+package com.github.axelliljendal.finance_tracker.jwt;
 
 public class JwtSecretGenerator {
     public static void main(String[] args) {

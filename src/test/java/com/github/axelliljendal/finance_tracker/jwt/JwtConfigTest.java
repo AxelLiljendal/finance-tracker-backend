@@ -1,4 +1,4 @@
-package com.github.axelliljendal.financetrackerbackend.config;
+package com.github.axelliljendal.finance_tracker.jwt;
 
 import com.github.axelliljendal.finance_tracker.PersonalFinanceTrackerApplication;
 import org.junit.jupiter.api.Test;
