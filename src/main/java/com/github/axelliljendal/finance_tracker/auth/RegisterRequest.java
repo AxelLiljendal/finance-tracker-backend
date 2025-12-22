@@ -1,4 +1,4 @@
-package com.github.axelliljendal.finance_tracker;
+package com.github.axelliljendal.finance_tracker.auth;
 
 import java.util.Set;
 

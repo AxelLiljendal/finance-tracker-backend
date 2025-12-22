@@ -1,9 +1,8 @@
 package com.github.axelliljendal.finance_tracker.auth;
 
-import com.github.axelliljendal.finance_tracker.LoginRequest;
+import com.github.axelliljendal.finance_tracker.jwt.JwtUtil;
 import com.github.axelliljendal.finance_tracker.user.User;
 import com.github.axelliljendal.finance_tracker.user.UserService;
-import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -32,7 +31,7 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<?> registerUser(@RequestBody RegiesterRequest request) {
+    public ResponseEntity<?> registerUser(@RequestBody RegisterRequest request) {
         try {
             Set<String> roles = request.getRoles() != null && !request.getRoles().isEmpty()
                     ? request.getRoles()
