@@ -1,12 +1,14 @@
 package com.github.axelliljendal.finance_tracker.user;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import java.util.Optional;
 import java.util.Set;
 import java.util.regex.Pattern;
 
+@Service
 public class UserService {
 
     private final UserRepository userRepository;
