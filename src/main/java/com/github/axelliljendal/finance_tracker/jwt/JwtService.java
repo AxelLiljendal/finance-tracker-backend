@@ -1,6 +1,5 @@
-package com.github.axelliljendal.finance_tracker;
+package com.github.axelliljendal.finance_tracker.jwt;
 
-import com.github.axelliljendal.finance_tracker.config.JwtConfig;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

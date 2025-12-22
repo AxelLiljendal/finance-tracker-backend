@@ -1,4 +1,4 @@
-package com.github.axelliljendal.finance_tracker.config;
+package com.github.axelliljendal.finance_tracker;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,7 +8,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 public class PasswordConfig {
     @Bean
-    public PasswordEncoder passwordEncoder() {
+    public PasswordEncoder PasswordEncoder() {
         return new BCryptPasswordEncoder();
     }
 }

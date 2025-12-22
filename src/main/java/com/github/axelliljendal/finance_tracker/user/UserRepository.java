@@ -1,6 +1,5 @@
-package com.github.axelliljendal.finance_tracker.repository;
+package com.github.axelliljendal.finance_tracker.user;
 
-import com.github.axelliljendal.finance_tracker.model.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Optional;
