@@ -9,6 +9,7 @@ import java.util.Set;
 
 @Document(collection = "users")
 public class User {
+
     @Id
     private String id;
 
@@ -24,27 +25,13 @@ public class User {
     public User() {
     }
 
-    public User(String id, String email, String password, Set<String> roles) {
-        this.id = id;
+    public User(String email, String password, Set<String> roles) {
         this.email = email;
         this.password = password;
         this.roles = roles;
     }
 
-    public User(String email, String hashed, Set<String> roles) {
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
+    public String getEmail() { return email; }
 
     public void setEmail(String email) {
         this.email = email;

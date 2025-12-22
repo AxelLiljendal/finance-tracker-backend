@@ -40,8 +40,9 @@ public class UserService {
             throw new IllegalArgumentException("Email already in use");
         }
 
-        String hashed = passwordEncoder.encode(password);
-        User user = new User(email, hashed, roles);
+        String hashedPassword = passwordEncoder.encode(password);
+
+        User user = new User(email, hashedPassword, roles);
 
         return userRepository.save(user);
     }
