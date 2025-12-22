@@ -1,4 +1,4 @@
-package com.github.axelliljendal.finance_tracker.auth;
+package com.github.axelliljendal.finance_tracker.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

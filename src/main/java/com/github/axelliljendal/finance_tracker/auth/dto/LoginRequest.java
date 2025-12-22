@@ -1,19 +1,15 @@
-package com.github.axelliljendal.finance_tracker.auth;
+package com.github.axelliljendal.finance_tracker.auth.dto;
 
-import java.util.Set;
-
-public class RegisterRequest {
+public class LoginRequest {
     private String email;
     private String password;
-    private Set<String> roles;
 
-    public RegisterRequest() {
+    public LoginRequest() {
     }
 
-    public RegisterRequest(String email, String password, Set<String> roles) {
+    public LoginRequest(String email, String password) {
         this.email = email;
         this.password = password;
-        this.roles = roles;
     }
 
     public String getEmail() {
@@ -30,13 +26,5 @@ public class RegisterRequest {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public Set<String> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(Set<String> roles) {
-        this.roles = roles;
     }
 }

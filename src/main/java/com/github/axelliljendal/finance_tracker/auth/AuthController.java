@@ -1,5 +1,7 @@
 package com.github.axelliljendal.finance_tracker.auth;
 
+import com.github.axelliljendal.finance_tracker.auth.dto.LoginRequest;
+import com.github.axelliljendal.finance_tracker.auth.dto.RegisterRequest;
 import com.github.axelliljendal.finance_tracker.jwt.JwtUtil;
 import com.github.axelliljendal.finance_tracker.user.User;
 import com.github.axelliljendal.finance_tracker.user.UserService;

@@ -1,6 +1,5 @@
 package com.github.axelliljendal.finance_tracker.security;
 
-import com.github.axelliljendal.finance_tracker.jwt.JwtAuthenticationFilter;
 import com.github.axelliljendal.finance_tracker.user.UserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

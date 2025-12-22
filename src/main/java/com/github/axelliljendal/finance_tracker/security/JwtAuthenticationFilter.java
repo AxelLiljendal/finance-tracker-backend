@@ -1,6 +1,6 @@
-package com.github.axelliljendal.finance_tracker.jwt;
+package com.github.axelliljendal.finance_tracker.security;
 
-import com.github.axelliljendal.finance_tracker.user.UserRepository;
+import com.github.axelliljendal.finance_tracker.jwt.JwtUtil;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
