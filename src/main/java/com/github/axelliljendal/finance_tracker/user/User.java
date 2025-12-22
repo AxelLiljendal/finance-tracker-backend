@@ -31,6 +31,9 @@ public class User {
         this.roles = roles;
     }
 
+    public User(String email, String hashed, Set<String> roles) {
+    }
+
     public String getId() {
         return id;
     }
