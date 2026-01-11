@@ -1,0 +1,57 @@
+package com.github.axelliljendal.finance_tracker.user;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.Set;
+
+@Document(collection = "users")
+public class User {
+
+    @Id
+    private String id;
+
+    @Email(message = "Please provide an email adress")
+    @NotBlank(message = "You must provide an email adress")
+    @Indexed(unique = true)
+    private String email;
+
+    @NotBlank(message = "You must provide a password")
+    private String password;
+
+    private Set<String> roles;
+
+    public User() {
+    }
+
+    public User(String email, String password, Set<String> roles) {
+        this.email = email;
+        this.password = password;
+        this.roles = roles;
+    }
+
+    public String getEmail() { return email; }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Set<String> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<String> roles) {
+        this.roles = roles;
+    }
+}
