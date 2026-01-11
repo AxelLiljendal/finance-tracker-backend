@@ -68,7 +68,7 @@ public class AuthController {
             );
 
             String email = authentication.getName();
-            String token = JwtUtil.generateToken(email);
+            String token = jwtUtil.generateToken(email);
 
             return ResponseEntity.ok(new AuthResponse(token, email));
 

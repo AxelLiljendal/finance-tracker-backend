@@ -36,7 +36,7 @@ public class SecurityConfig {
                         .withUsername(user.getEmail())
                         .password(user.getPassword())
                         .authorities(user.getRoles().stream()
-                                .map(SimpleGrantedAuthority::new)
+                                .map(role -> new SimpleGrantedAuthority("ROLE " + role))
                                 .collect(Collectors.toList()))
                         .build())
                 .orElseThrow(() -> new UsernameNotFoundException("User not found: " + email));
@@ -64,7 +64,8 @@ public class SecurityConfig {
     }
 
     @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
-        return authenticationConfiguration.getAuthenticationManager();
+    public AuthenticationManager authenticationManager
+            (AuthenticationConfiguration authConfig) throws Exception {
+        return authConfig.getAuthenticationManager();
     }
 }
