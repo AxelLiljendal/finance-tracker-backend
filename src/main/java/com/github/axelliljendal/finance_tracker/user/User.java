@@ -13,11 +13,11 @@ public class User {
     @Id
     private String id;
 
-    @Email
-    @NotBlank
+    @Email(message = "Please provide an email adress")
+    @NotBlank(message = "You must provide an email adress")
     private String email;
 
-    @NotBlank
+    @NotBlank(message = "You must provide a password")
     private String password;
 
     private Set<String> roles;
