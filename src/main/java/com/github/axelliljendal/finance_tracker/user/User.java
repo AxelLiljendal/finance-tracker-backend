@@ -3,6 +3,7 @@ package com.github.axelliljendal.finance_tracker.user;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Set;
@@ -15,6 +16,7 @@ public class User {
 
     @Email(message = "Please provide an email adress")
     @NotBlank(message = "You must provide an email adress")
+    @Indexed(unique = true)
     private String email;
 
     @NotBlank(message = "You must provide a password")
