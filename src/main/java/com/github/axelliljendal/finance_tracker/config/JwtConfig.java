@@ -1,4 +1,4 @@
-package com.github.axelliljendal.finance_tracker.jwt;
+package com.github.axelliljendal.finance_tracker.config;
 
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
