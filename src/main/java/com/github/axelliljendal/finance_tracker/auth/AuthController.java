@@ -6,7 +6,6 @@ import com.github.axelliljendal.finance_tracker.jwt.JwtUtil;
 import com.github.axelliljendal.finance_tracker.user.User;
 import com.github.axelliljendal.finance_tracker.user.UserService;
 import jakarta.validation.Valid;
-import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -22,7 +21,7 @@ import java.util.Map;
 import java.util.Set;
 
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/auth")
 public class AuthController {
 
     private final UserService userService;
