@@ -2,6 +2,7 @@ package com.github.axelliljendal.finance_tracker.auth.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 public class LoginRequest {
 
@@ -10,6 +11,7 @@ public class LoginRequest {
     private String email;
 
     @NotBlank(message = "You must provide a password")
+    @Size(min = 8, message = "Password must be at least 8 characters long")
     private String password;
 
     public LoginRequest() {
