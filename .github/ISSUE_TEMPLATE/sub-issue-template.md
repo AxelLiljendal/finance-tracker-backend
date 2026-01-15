@@ -6,9 +6,6 @@ labels: sub-issue
 assignees: ''
 ---
 
-## Epic
-[Link to parent epic issue]
-
 ## Description
 A clear and concise description of what needs to be implemented.
 
@@ -16,16 +13,6 @@ A clear and concise description of what needs to be implemented.
 - [ ] Criterion 1
 - [ ] Criterion 2
 - [ ] Criterion 3
-
-## Technical Details
-<!-- Add relevant technical information, APIs, libraries, or approaches -->
-
-## Dependencies
-<!-- List any dependencies on other issues or tasks -->
-- Depends on #[issue-number]
-
-## Estimated Effort
-<!-- e.g., Small (< 4h), Medium (4-8h), Large (> 8h) -->
 
 ## Testing Requirements
 - [ ] Unit tests added
