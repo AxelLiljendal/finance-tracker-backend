@@ -36,7 +36,7 @@ public class SecurityConfig {
                         .withUsername(user.getEmail())
                         .password(user.getPassword())
                         .authorities(user.getRoles().stream()
-                                .map(role -> new SimpleGrantedAuthority("ROLE " + role))
+                                .map(role -> new SimpleGrantedAuthority("ROLE_" + role))
                                 .collect(Collectors.toList()))
                         .build())
                 .orElseThrow(() -> new UsernameNotFoundException("User not found: " + email));
@@ -47,7 +47,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers("/auth/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session
